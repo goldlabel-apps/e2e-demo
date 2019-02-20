@@ -11,5 +11,4 @@ it makes sense to use GitHub Pages to take care of this for us.
 All we need do is create a few files in a ```/docs``` folder,  
 commit the new file and we're good to go.
 
-The resulting docs are here =>
-[Github Pages](https://listingslab-software.github.io/tennis-challenge-sydney/)
+View resulting docs on [Github Pages](https://listingslab-software.github.io/tennis-challenge-sydney)

@@ -1,4 +1,4 @@
-# Tennis Challenge Sydney
+## [Tennis Challenge Sydney](https://listingslab-software.github.io/tennis-challenge-sydney)
 
 JavaScript Coding Coding Challenge (3 hrs)
 
@@ -7,32 +7,7 @@ JavaScript Coding Coding Challenge (3 hrs)
 - [Solution](https://github.com/listingslab-software/tennis-challenge-sydney)
 - [Docs](https://listingslab-software.github.io/tennis-challenge-sydney)
 
+## Process
 
-We will start by considering this challenge from an Agile perspective.  
-What are the goals? Who are the stakeholders? What are the parameters?
-
-## Goals
-
-As a developer I want to deliver a working piece of software
-Which demonstrates who I am as a coder
-So that DiUS can evaluate it.
-
-## Stakeholders  
-
-*Product Owner*  
-
-Is the representative of the business that will use the app. 
-In this case we are imagining an event organiser with no previous  
-software dev or agil experience.
-
-*JavaScript Developer*
-
-Me. My role is to deliver a solution in the form of a Github repo  
-which can be analysed by the Agile Coach to see whether my approach  
-is likely to be a suitable fit to DiUS
-
-*Agile Coach*
-
-## Parameters
-
-Let's aim to have the excersise completed within three hours. Go.
+- [Agile First](https://listingslab-software.github.io/tennis-challenge-sydney/agile_first.html)
+- [Minimum requirements](https://listingslab-software.github.io/tennis-challenge-sydney/requirements.html)
