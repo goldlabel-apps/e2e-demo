@@ -1,4 +1,4 @@
-## Tennis Challenge Sydney 
+## [Tennis Challenge Sydney](./index.md)
 
 # [Brief](https://github.com/DiUS/coding-tests/blob/master/dius_tennis.md)
 

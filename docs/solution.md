@@ -1,4 +1,4 @@
-# Tennis Challenge Sydney
+## [Tennis Challenge Sydney](./index.md)
 
 # Solution
 
@@ -10,7 +10,11 @@ Let's set up a JSON object to describe a match
 ```javascript
 [
     { 
-
+        player1Points: 0,
+        player2Points: 0,
+        player1Games: 0,
+        player2Games: 0,
+        winner: null,
     }
 ]
 ```

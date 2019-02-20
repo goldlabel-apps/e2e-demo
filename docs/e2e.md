@@ -1,15 +1,17 @@
-## Tennis Challenge Sydney
+## [Tennis Challenge Sydney](./index.md)
 
-# e2e
+# Cucumber/Nightwatch e2e testing
+
+[![e2e test](./docs/img/passing_e2e_test.png)](https://www.youtube.com/watch?v=MugXpi9D78g)
 
 End to End test a react app using cucumber and nightwatch API
 
 Cucumber e2e testing harness is bootstrapped from 
 https://github.com/listingslab-software/react-e2e
 
+## Setup
+
 End to End test a react app using Cucumber and nightwatch API.
-When everything works, something like this happens
-https://www.youtube.com/watch?v=MugXpi9D78g&feature=youtu.be
 
 ```bash
     cd <working-directory>
@@ -18,11 +20,11 @@ https://www.youtube.com/watch?v=MugXpi9D78g&feature=youtu.be
     npm i
     npm run e2e
 ```
-A passing e2e test would look like this
+Output from a passing e2e test would look like this
 
 ![passing e2e test](./docs/img/passing_e2e_test.png)
 
-### Required NPM Dev Dependencies
+#### NPM Dependencies
 
 ```javascript
     "devDependencies": {
