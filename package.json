@@ -1,0 +1,59 @@
+{
+  "name": "tennis-challenge-sydney",
+  "version": "0.0.2",
+  "license": "OSL-3.0",
+  "author": {
+    "name": "Chris Dorward",
+    "email": "listingslab@gmail.com"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "e2e": "BROWSER=none NODE_ENV=test start-server-and-test start http-get://localhost:3000 e2e:_webdriver",
+    "e2e:_run": "cucumber-js --require='e2e/setupTests.js' --require='e2e/createWorld.js' --require='e2e/Features/**/*.step.js' --format='node_modules/cucumber-pretty' -- 'e2e/Features/**/*.feature'",
+    "e2e:_webdriver": "BROWSER=none NODE_ENV=test start-server-and-test e2e:_webdriver:start http-get://localhost:4444/status e2e:_run",
+    "e2e:_webdriver:start": "node e2e/startWebDriver.js",
+    "e2e:start": "run-s start:portal-customer e2e:_webdriver",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/listingslab-software/tennis-challenge-sydney"
+  },
+  "keywords": [
+    "JavaScript",
+    "React",
+    "e2e"
+  ],
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-scripts": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/nightwatch": "^0.9.8",
+    "@types/react": "^16.7.6",
+    "@types/react-dom": "^16.0.9",
+    "chromedriver": "2.43.1",
+    "cucumber": "5.0.2",
+    "cucumber-pretty": "^1.5.0",
+    "nightwatch": "1.0.11",
+    "nightwatch-api": "latest",
+    "selenium-server": "^3.141.0",
+    "start-server-and-test": "1.7.9"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=6"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

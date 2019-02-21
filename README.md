@@ -10,4 +10,5 @@ JavaScript Coding Coding Challenge (3 hrs)
 ## Process
 
 - [Agile First](https://listingslab-software.github.io/tennis-challenge-sydney/agile_first.html)
-- [Minimum requirements](https://listingslab-software.github.io/tennis-challenge-sydney/requirements.html)
+- [Minimum Requirements](https://listingslab-software.github.io/tennis-challenge-sydney/requirements.html)
+- [Bootstraping](https://listingslab-software.github.io/tennis-challenge-sydney/bootstrap.html)

@@ -5,8 +5,9 @@
 We're going to create a React App which can be run and 
 tested automatically by [e2e](./e2e.md).
 
-The react is bootstrapped from create-react-app and then 
-the e2e capability is added.
+The react is bootstrapped from 
+[create-react-app](./bootstrap.md) 
+and then the e2e capability is added.
 
 The process is quick as it just involves cloning 
 https://github.com/listingslab-software/react-e2e
