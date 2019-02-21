@@ -25,3 +25,18 @@ cp package.json <this-project>
 cd ../
 rm -rf react-e2e
 ```
+
+Now we can run our e2e test and verify that everything is working
+
+## Gherkin Syntax 
+
+Feature: Bootstrap
+
+  In order to develop the app
+  As a coder
+  I want to be see the Bootstrapped OK. message
+
+  Scenario: React App Successfully Bootstrapped
+    Given I am on the app page
+    And I wait "2" seconds
+    Then I should see "Bootstrapped OK."
