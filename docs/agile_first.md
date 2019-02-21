@@ -28,5 +28,4 @@ is likely to be a suitable fit to DiUS
 
 Let's aim to have the excersise completed within three hours. Go.
 
-# NEXT =>
-[Identify Minimum Requirements](https://listingslab-software.github.io/tennis-challenge-sydney/requirements.html)
+# NEXT => [Identify Minimum Requirements](https://listingslab-software.github.io/tennis-challenge-sydney/requirements.html)

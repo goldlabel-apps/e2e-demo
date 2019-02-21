@@ -21,7 +21,6 @@ What are the minimum requirements to deliver our
     - i's dotted, t's crossed & spell checked
     - fully documented
     - e2e tested
-    - demo deployed to firebase
+    - Deployed to firebase
 
-# NEXT =>
-[Bootstrap JavaScript Env](https://listingslab-software.github.io/tennis-challenge-sydney/bootstrap.html)
+# NEXT => [Bootstrap JavaScript Env](https://listingslab-software.github.io/tennis-challenge-sydney/bootstrap.html)
