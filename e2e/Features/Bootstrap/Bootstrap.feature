@@ -3,6 +3,7 @@ Feature: Bootstrap
   When the app starts, I want to be able to see a link to see the word Ready rendered
   So that I know everything is working properly
 
-  Scenario: Bootstrapped Successfully
+  Scenario: React App Successfully Bootstrapped
     Given I am on the app page
-    Then I should see "Ready."
+    And I wait "2" seconds
+    Then I should see "Bootstrapped."
