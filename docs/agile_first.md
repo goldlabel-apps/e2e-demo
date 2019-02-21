@@ -11,22 +11,22 @@ As a developer I want to deliver a working piece of software Which demonstrates 
 
 ## Stakeholders
 
-### Product Owner
+- *Product Owner*
 
 Is the representative of the business that will use the app. In this case we are imagining an event organiser with no previous
 software dev or agil experience.
 
-### JavaScript Developer
+- *JavaScript Developer*
 
 Me. My role is to deliver a solution in the form of a Github repo
 which can be analysed by the Agile Coach to see whether my approach
 is likely to be a suitable fit to DiUS
 
-### Agile Coach
+- *Agile Coach*
 
 ## Parameters
 
 Let's aim to have the excersise completed within three hours. Go.
 
 # NEXT =>
-[Stage 1. Identify Minimum Requirements](https://listingslab-software.github.io/tennis-challenge-sydney/requirements.html)
+[Identify Minimum Requirements](https://listingslab-software.github.io/tennis-challenge-sydney/requirements.html)
