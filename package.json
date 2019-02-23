@@ -1,6 +1,6 @@
 {
   "name": "tennis-challenge-sydney",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "OSL-3.0",
   "author": {
     "name": "Chris Dorward",
@@ -27,9 +27,12 @@
     "e2e"
   ],
   "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "@material-ui/icons": "^3.0.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "^2.1.1"
+    "react-scripts": "^2.1.1",
+    "uniqid": "^5.0.3"
   },
   "devDependencies": {
     "@types/nightwatch": "^0.9.8",
