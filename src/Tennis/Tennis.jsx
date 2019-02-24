@@ -18,6 +18,10 @@ class Tennis extends Component {
     currentMatch: null,
   }
 
+  // componentDidMount (){
+  //   this.startMatch();
+  // }
+
   startMatch = () => {
     const matchId = uniqid('match_');
     let newMatches = this.state.matches;
@@ -27,10 +31,8 @@ class Tennis extends Component {
       lastUpdate: Date.now(),
       player1Points: 0,
       player2Points: 0,
-      player1Games: 0,
-      player2Games: 0,
       winner: null,
-      feedBack: `Click on a player to win them a point`,
+      score: `0:0`,
     };
     newMatches.push (newObj);
     this.setState({
@@ -39,48 +41,45 @@ class Tennis extends Component {
     })
   }
 
-  pointWon = (winner) => {
+  pointWon = (player) => {
     const {
       currentMatch,
     } = this.state;
-    let feedBack = ``;
     let p1 = currentMatch.player1Points;
     let p2 = currentMatch.player2Points;
-    switch (winner) {
-      case 'player1':
-        p1 ++;
-        feedBack = `Yay Player 1!`;
-        break;
-      case 'player2':
-        p2 ++;
-        feedBack = `Yay Player 2!`;
-        break;
-      default: 
+    let winner = null;
+
+    player === 'player1' ? p1++ : p2++;
+    let score = `${this.getPeculiarScore(p1)}:${this.getPeculiarScore(p2)}`;
+    if (p1 === 3 && p2 === 3){
+      score = 'Deuce';
+    }  
+    if (p1 > 3 || p2 > 3){
+      const d =  Math.max(p1, p2) - Math.min(p1, p2);
+      let playerX = `Player 1`;
+      if (p2 === Math.max(p1, p2)){
+        playerX = `Player 2`;
+      }
+      switch (d) {
+        case 0:
+          score = `Deuce`;
+          break;
+        case 1:
+          score = `Advantage ${playerX}`;
+          break;
+        default:
+          winner = playerX;
+      }
     }
-    feedBack = this.checkGameState().feedBack;
-    console.log (this.checkGameState());
     this.setState ({
       currentMatch:{
         ...currentMatch,
         player1Points: p1,
         player2Points: p2,
-        feedBack,
+        winner,
+        score,
       }
     })
-
-
-  }
-
-  checkGameState = () => {
-    // const {
-    //   currentMatch,
-    // } = this.state;
-    // console.log ('checkGameState', currentMatch);
-    let gameState = {
-      gameOver: false,
-      feedBack: `keep playing, bro`,
-    };
-    return gameState;
   }
 
   randomisePointWin = () => {
@@ -118,13 +117,36 @@ class Tennis extends Component {
     const {
       currentMatch,
     } = this.state;
-    let score = '0:0';
     if (currentMatch !== null){
-      score = `${this.getPeculiarScore(currentMatch.player1Points)} : ${this.getPeculiarScore(currentMatch.player2Points)}`;
+      if (currentMatch.winner !== null){
+        return (
+        <Grid container className={cn(classes.tennis)}>
+          <Grid item xs={12} className={cn(classes.result)}>
+            <Typography variant={`button`}>
+              Game Over
+            </Typography>
+            <div  className={cn(classes.winner)}>
+              <Typography variant={`title`}>
+                {currentMatch.winner} Wins
+              </Typography>
+            </div>
+            <Button
+              id={`start-match`}
+              variant={`contained`}
+              color={`primary`}
+              onClick={(e) => {
+                e.preventDefault();
+                this.startMatch();
+              }}>
+              New Match
+            </Button>
+          </Grid>
+        </Grid>
+        );
+      }
     }
     return (
-      <div className={cn(classes.tennis)}>
-          <Grid container>
+          <Grid container className={cn(classes.tennis)}>
           { currentMatch === null ? 
             <Grid item xs={12}  className={cn(classes.startMatchBtn)}>
               <Button
@@ -144,12 +166,12 @@ class Tennis extends Component {
               <Grid container className={cn(classes.court)}>
                   
                   <Grid item xs={6}> 
-                    <Typography variant={`title`}>
+                    <Typography variant={`title`} className={cn(classes.playerTitle)}>
                       {`Player 1`}
                     </Typography>
                     <div style={{ borderRight: '1px solid #eee' }}>
                       <IconButton
-                        disabled={false}
+                        id={`player1`}
                         color={`primary`}
                         onClick={(e) => {
                           e.preventDefault();
@@ -161,12 +183,12 @@ class Tennis extends Component {
                   </Grid>
 
                   <Grid item xs={6}>
-                    <Typography variant={`title`}>
+                    <Typography variant={`title`} className={cn(classes.playerTitle)}>
                       {`Player 2`}
                     </Typography>
                     <div style={{ borderLeft: '1px solid #eee' }}>
                       <IconButton
-                        disabled={false}
+                        id={`player2`}
                         color={`secondary`}
                         onClick={(e) => {
                           e.preventDefault();
@@ -180,35 +202,17 @@ class Tennis extends Component {
                 </Grid>
               </Grid>
 
-
-              <Grid item xs={12} className={cn(classes.feedBack)}>
-                <Typography variant={`body1`}>
-                  {currentMatch.feedBack}
-                </Typography>
-              </Grid>
-
-
               <Grid item xs={12} className={cn(classes.points)}>
-                <Typography variant={`title`}>
-                  Score
-                </Typography>
-                <Typography variant={`title`}>
-                  {score}
-                </Typography>
-              </Grid>
-
-              
-
-              <Grid item xs={12}>
-                <Typography variant={`body2`} className={cn(classes.matchId)}>
-                  matchId: {currentMatch.matchId}
-                </Typography>
+                <div id={`score`}>
+                  <Typography variant={`title`}>
+                    {currentMatch.score}
+                  </Typography>
+                </div>
               </Grid>
 
             </React.Fragment>
           }
         </Grid>
-      </div>
     );
   }
 }

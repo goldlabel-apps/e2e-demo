@@ -1,6 +1,11 @@
+
 ## [Tennis Challenge Sydney](./index.md)
 
 # JavaScript
+
+The app is contained in a single Class written in valid JSX syntax  
+[Tennis.jsx](https://github.com/listingslab-software/tennis-challenge-sydney/blob/master/src/Tennis/Tennis.jsx)
+
 
 ## Why React?
 
@@ -14,82 +19,106 @@ superset of features such as state management and component lifecycle hooks.
 That said, at it's heart, Tennis is still just a Class.  
 Let's review the Vanilla parts.
 
-## Vanilla Javascript Tennis Class
+## Tennis Class
 
+First we want to start the match
 What variables do we need to track to keep score?  
-Let's set up a JSON object to describe a match
+Let's set up a JSON object to describe one
 
 ```javascript
-    { 
-        matchId: 1,
-        player1Points: 0,
-        player2Points: 0,
-        player1Games: 0,
-        player2Games: 0,
-        winner: null,
-    }
+  startMatch = () => {
+    const matchId = uniqid('match_');
+    let newMatches = this.state.matches;
+    const newObj = {
+      matchId,
+      dateStarted: Date.now(),
+      lastUpdate: Date.now(),
+      player1Points: 0,
+      player2Points: 0,
+      winner: null,
+      score: `0:0`,
+    };
+    newMatches.push (newObj);
+    this.setState({
+      matches: newMatches,
+      currentMatch: newObj
+    })
+  }
 ```
+- Judging Score
 
-Next we'd need a function to mutate the object.  
-We'll call it pointWon and it will take a parameter 'winner'  
-Which should only be either 'player1' || 'player2'
+This is the core of the application. It gets called on button click.  
+It takes a param, player and does the game logic.
 
-```javascript
-pointWon = (winner) => {
-    switch (winner) {
-        case 'player1':
-            const newPlayer1Points = this.state.player1Points + 1;
-            this.setState ({
-                player1Points: newPlayer1Points
-            })
-            break;
-
-        case 'player2':
-            const newPlayer2Points = this.state.player2Points + 1;
-            this.setState ({
-            player2Points: newPlayer2Points
-            })
-            break;
-
-    default: 
-        alert ('pointWon error');
-}
-```
-
-### Judging Score on update
-
-That takes care of updating the component state with a new score.  
-Next we will need to make a judgement on the new state of the match object  
-to check if any special cases such as 'game_over' have been reached.
-
-In React, the render method is called on state update, so this is the time  
-for us to make our judgement
-
-### Converting points to score
-
-The running score of each game is described in a manner peculiar to tennis: scores from zero to three points are described as 0, 15, 30, 40, respectively.
-
-We'll need a method to do that.
+It was at this point that we decided to de-scope the scoring of games  
+due to time constraints. 
 
 ```javascript
-getPeculiarScore = (points) => {
-    let peculiarScore;
-    switch (points) {
+pointWon = (player) => {
+    const {
+        currentMatch,
+    } = this.state;
+    let p1 = currentMatch.player1Points;
+    let p2 = currentMatch.player2Points;
+    let winner = null;
+    player === 'player1' ? p1++ : p2++;
+    let score = `${this.getPeculiarScore(p1)}:${this.getPeculiarScore(p2)}`;
+    if (p1 === 3 && p2 === 3){
+        score = 'Deuce';
+    }  
+    if (p1 > 3 || p2 > 3){
+        const d =  Math.max(p1, p2) - Math.min(p1, p2);
+        let playerX = `Player 1`;
+        if (p2 === Math.max(p1, p2)){
+        playerX = `Player 2`;
+        }
+        switch (d) {
         case 0:
-            peculiarScore = `love`; // || 0 :)
+            score = `Deuce`;
             break;
         case 1:
-            peculiarScore = `15`;
+            score = `Advantage ${playerX}`;
             break;
-        case 2:
-            peculiarScore = `30`;
-            break;
-        case 3:
-            peculiarScore = `40`;
-            break;
-        default: 
-            peculiarScore = 'getPeculiarScore error';
+        default:
+            winner = playerX;
+        }
     }
-    return peculiarScore;
+    this.setState ({
+        currentMatch:{
+        ...currentMatch,
+        player1Points: p1,
+        player2Points: p2,
+        winner,
+        score,
+        }
+    })
 }
 ```
+- Converting points to score
+
+The running score of each game is described in a manner peculiar to tennis: scores from zero to three points are described as 0, 15, 30, 40, respectively. We'll also need a method to do that.
+
+```javascript
+  getPeculiarScore = (points) => {
+    let peculiarScore;
+    switch (points) {
+      case 0:
+        peculiarScore = `0`; // || `Love`
+        break;
+      case 1:
+        peculiarScore = `15`;
+        break;
+      case 2:
+        peculiarScore = `30`;
+        break;
+      case 3:
+        peculiarScore = `40`;
+        break;
+      default: 
+        peculiarScore = 'error';
+    }
+    return peculiarScore;
+  }
+```
+
+NEXT => [Delivery](https://listingslab-software.github.io/tennis-challenge-sydney/solution.html)

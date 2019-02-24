@@ -4,51 +4,62 @@ Feature: Tennis
   As a event organiser
   I want to be be sure the app scores correctly
 
-  Scenario: No match in progress
+  Scenario: Starting a new match
     Given I am on the tennis page
-    And I wait "1" seconds
     Then I should see "START MATCH"
+    And I wait "1" seconds
+    And I click "#start-match"
+    Then The score should be "0:0"
+    And this scenario is done 
 
-  Scenario: Start Match
+  Scenario: Player 1 wins by a Whitewash
     Given I am on the tennis page
     And I click "#start-match"
+    And I click "#player1"
+    Then The score should be "15:0"
     And I wait "1" seconds
-    Then I should see "matchId:"
-
-  Scenario: Player 1 Win
-    Given I click player 1 "5" times
+    And I click "#player1"
+    Then The score should be "30:0"
     And I wait "1" seconds
-    Then I should see "Game Over. Player 1 Wins"
+    And I click "#player1"
+    Then The score should be "40:0"
+    And I wait "1" seconds
+    And I click "#player1"
+    Then I should see "Player 1 Wins"
+    And I should see "GAME OVER"
+    And this scenario is done 
 
-  # Scenario: Player 2 Win
-  #   Given I click player 2 "5" times
-  #   And I wait "1" seconds
-  #   Then I should see "Game Over. Player 2 Wins"
-
-  # Scenario: Deuce
-  #   Given I click player 1 "4" times
-  #   Given I click player 2 "4" times
-  #   And I wait "1" seconds
-  #   Then I should see "Deuce"
-
-  # Scenario: Advantage Player 1
-  #   Given I click player 1 "5" times
-  #   Given I click player 2 "4" times
-  #   And I wait "1" seconds
-  #   Then I should see "Advantage Player 1"
-
-  # Scenario: Advantage Player 2
-  #   Given I click player 1 "5" times
-  #   Given I click player 2 "4" times
-  #   And I wait "1" seconds
-  #   Then I should see "Advantage Player 2"
-
-  # Scenario: Game Over
-  #   Given I click player 1 "2" times
-  #   Given I click player 2 "2" times
-  #   Given I click player 1 "2" times
-  #   Given I click player 2 "2" times
-  #   Given I click player 1 "2" times
-  #   And I wait "1" seconds
-  #   Then I should see "Game Over"
-    
+  Scenario: Players 1 & 2 battle it out
+    Given I am on the tennis page
+        And I click "#start-match"
+        And I click "#player2"
+        Then The score should be "0:15"
+        And I wait "1" seconds
+        And I click "#player1"
+        Then The score should be "15:15"
+        And I wait "1" seconds
+        And I click "#player2"
+        Then The score should be "15:30"
+        And I wait "1" seconds
+        And I click "#player1"
+        Then The score should be "30:30"
+        And I wait "1" seconds
+        And I click "#player1"
+        Then The score should be "40:30"
+        And I wait "1" seconds
+        And I click "#player2"
+        Then The score should be "Deuce"
+        And I wait "1" seconds
+        And I click "#player1"
+        Then The score should be "Advantage Player 1"
+        And I wait "1" seconds
+        And I click "#player2"
+        Then The score should be "Deuce"
+        And I wait "1" seconds
+        And I click "#player2"
+        Then The score should be "Advantage Player 2"
+        And I wait "1" seconds
+        And I click "#player2"
+        Then I should see "Player 2 Wins"
+        And I should see "GAME OVER"
+        And this scenario is done

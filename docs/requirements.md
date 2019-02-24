@@ -1,3 +1,4 @@
+
 ## [Tennis Challenge Sydney](./index.md)
 
 # Requirements
@@ -8,19 +9,13 @@ What are the minimum requirements to deliver our
 - A UAT environment. Some URL that all stakeholders can see.
     - Firebase
 
-- Cucumber e2e Testing
-    - https://github.com/listingslab-software/react-e2e
-
-- Some original JavaScript Code that scores a Tennis game
-
+- Developed with a Test Driven approach
+- JavaScript Class which scores a Tennis game
 - Basic React App bootstrapped with material UI
-    - This is the vehicle for the JavaScript created above
-
 - A working version 1.0 
-    
-    - i's dotted, t's crossed & spell checked
-    - fully documented
-    - e2e tested
-    - Deployed to firebase
+    - Fully documented
+    - with the i's dotted, t's crossed & spell check run
+    - screencast of a fully automated, successful test
+    - Working demo deployed to firebase
 
-# NEXT => [Bootstrap JavaScript Env](https://listingslab-software.github.io/tennis-challenge-sydney/bootstrap.html)
+NEXT => [Bootstrap JavaScript Env](https://listingslab-software.github.io/tennis-challenge-sydney/bootstrap.html)

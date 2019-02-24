@@ -1,6 +1,7 @@
+
 ## [Tennis Challenge Sydney](./index.md)
 
-# [Brief](https://github.com/DiUS/coding-tests/blob/master/dius_tennis.md)
+# [The Challenge](https://github.com/DiUS/coding-tests/blob/master/dius_tennis.md)
 
 DiUS is hosting a tennis tournament. To aid with this, we're developing a scoring system.
 
