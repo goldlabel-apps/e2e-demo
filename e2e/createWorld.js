@@ -25,12 +25,6 @@ async function iAmOn(url) {
 exports.iAmOn = iAmOn;
 Given(/^I am on "([^"]*)"$/, iAmOn);
 
-async function iFillInBlankWithBlank(selector, value) {
-  await client.assert.elementPresent(selector);
-  await client.setValue(selector, value);
-}
-exports.iFillInBlankWithBlank = iFillInBlankWithBlank;
-Given(/^I fill in "([^"]*)" with "([^"]*)"$/, iFillInBlankWithBlank);
 
 async function iWaitForBlankSeconds(seconds) {
   const milliseconds = 1000;

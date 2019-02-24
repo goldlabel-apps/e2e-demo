@@ -1,3 +1,4 @@
+
 ## [Tennis Challenge Sydney](./index.md)
 
 # Bootstrap Environment
@@ -5,14 +6,8 @@
 We're going to create a React App which can be run and 
 tested automatically by [e2e](./e2e.md).
 
-The react is bootstrapped from 
-[create-react-app](./bootstrap.md) 
+React is bootstrapped from [create-react-app](./bootstrap.md) 
 and then the e2e capability is added.
-
-The process is quick as it just involves cloning 
-https://github.com/listingslab-software/react-e2e
-
-Let's do that now
 
 ```
 git clone https://github.com/listingslab-software/react-e2e
@@ -28,7 +23,11 @@ rm -rf react-e2e
 
 Now we can run our e2e test and verify that everything is working
 
-## Gherkin Syntax 
+## Feature: Bootstrap
+
+[/e2e/Features/Bootstrap.feature](https://github.com/listingslab-software/tennis-challenge-sydney/blob/master/e2e/Features/Bootstrap/Bootstrap.feature)
+
+```bash
 
 Feature: Bootstrap
 
@@ -40,3 +39,7 @@ Feature: Bootstrap
     Given I am on the app page
     And I wait "2" seconds
     Then I should see "Bootstrapped OK."
+
+```
+
+NEXT => [Test Driven Development](https://listingslab-software.github.io/tennis-challenge-sydney/tdd.html)
