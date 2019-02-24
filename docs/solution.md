@@ -1,5 +1,5 @@
 
-## [Tennis Challenge Sydney](./index.md)
+## [Home](./index.md)
 
 # [Solution](https://github.com/listingslab-software/tennis-challenge-sydney/solution.html)
 

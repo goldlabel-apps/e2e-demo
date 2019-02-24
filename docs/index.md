@@ -1,5 +1,5 @@
 
-## [Tennis Challenge Sydney](./index.md)
+## Tennis Challenge Sydney
 
 - [The Challenge](./challenge.md)  
 - [Solution](./solution.md)  
@@ -8,8 +8,11 @@
 
     - [Agile First](./agile.md)  
     - [Requirements](./requirements.md)  
-        - [Test Driven Development](./tdd.md)  
+        
+        1 [Setup TDD](./tdd.md)  
             - [e2e](./e2e.md)  
-        - [Setup Environment](./bootstrap.md)  
+
+        2 [Setup Environment](./bootstrap.md)  
             - [Create React App](./create-react-app.md)  
-        - [JavaScript Class](./javascript.md)  
+        
+        3 [JavaScript Class](./javascript.md)  

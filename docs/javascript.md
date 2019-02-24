@@ -1,5 +1,5 @@
 
-## [Tennis Challenge Sydney](./index.md)
+## [Home](./index.md)
 
 # JavaScript
 
@@ -45,13 +45,11 @@ Let's set up a JSON object to describe one
     })
   }
 ```
-- Judging Score
+## Game logic
 
-This is the core of the application. It gets called on button click.  
-It takes a param, player and does the game logic.
+The ___pointWon(player)__ method is the core of the game. It gets called every time a player wins a point by their icon button being clicked. It takes one param; the winner of the point __player__. The method then processes the point, works out the score and updates the state with the result.
 
-It was at this point that we decided to de-scope the scoring of games  
-due to time constraints. 
+It was at this time that we decided to de-scope the scoring of games in a set due to time constraints. 
 
 ```javascript
 pointWon = (player) => {
@@ -94,7 +92,8 @@ pointWon = (player) => {
     })
 }
 ```
-- Converting points to score
+
+## Other methods
 
 The running score of each game is described in a manner peculiar to tennis: scores from zero to three points are described as 0, 15, 30, 40, respectively. We'll also need a method to do that.
 

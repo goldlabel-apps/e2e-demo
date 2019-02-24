@@ -1,21 +1,22 @@
 
-## [Tennis Challenge Sydney](./index.md)
+## [Home](./index.md)
 
 # Requirements
 
 What are the minimum requirements to deliver our 
-[agile goal]("https://listingslab-software.github.io/tennis-challenge-sydney/agile_first.html")
+[agile goal]("https://listingslab-software.github.io/tennis-challenge-sydney/agile.html")?
 
-- A UAT environment. Some URL that all stakeholders can see.
-    - Firebase
-
+- A Firebase UAT environment with a URL all stakeholders can see
 - Developed with a Test Driven approach
 - JavaScript Class which scores a Tennis game
 - Basic React App bootstrapped with material UI
-- A working version 1.0 
-    - Fully documented
-    - with the i's dotted, t's crossed & spell check run
-    - screencast of a fully automated, successful test
-    - Working demo deployed to firebase
+
+### Delivery
+
+- A working Tennis Application, deployed to firebase
+- Full documententation with i's dotted, t's crossed & spell check done
+- Youtube Screencast of a fully automated, successful test
+
+[![Youtube](https://listingslab.io/wp-content/uploads/2019/02/youtube.png)](https://www.youtube.com/watch?v=Ia9ut7T7oc0)
 
 NEXT => [Bootstrap JavaScript Env](https://listingslab-software.github.io/tennis-challenge-sydney/bootstrap.html)

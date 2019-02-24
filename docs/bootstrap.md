@@ -1,12 +1,12 @@
 
-## [Tennis Challenge Sydney](./index.md)
+## [Home](./index.md)
 
 # Bootstrap Environment
 
 We're going to create a React App which can be run and 
 tested automatically by [e2e](./e2e.md).
 
-React is bootstrapped from [create-react-app](./bootstrap.md) 
+React is bootstrapped from [create-react-app](./create-react-app.md) 
 and then the e2e capability is added.
 
 ```
@@ -22,6 +22,8 @@ rm -rf react-e2e
 ```
 
 Now we can run our e2e test and verify that everything is working
+
+[![Youtube](./img/youtube.png)](https://www.youtube.com/watch?v=_3vsosVX9r0)
 
 ## Feature: Bootstrap
 

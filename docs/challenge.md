@@ -1,5 +1,5 @@
 
-## [Tennis Challenge Sydney](./index.md)
+## [Home](./index.md)
 
 # [The Challenge](https://github.com/DiUS/coding-tests/blob/master/dius_tennis.md)
 

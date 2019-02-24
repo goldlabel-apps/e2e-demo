@@ -12,4 +12,4 @@ Because this is a github repo it makes sense to use GitHub Pages to take care of
 
 [Github Pages](https://listingslab-software.github.io/tennis-challenge-sydney)
 
-- [JavaScript](https://listingslab-software.github.io/tennis-challenge-sydney/javascript.html)
+NEXT => [Solution](https://listingslab-software.github.io/tennis-challenge-sydney/solution.html)
