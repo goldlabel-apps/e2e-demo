@@ -1,6 +1,6 @@
 {
   "name": "tennis-challenge-sydney",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "license": "OSL-3.0",
   "author": {
     "name": "Chris Dorward",
@@ -15,7 +15,8 @@
     "e2e:start": "run-s start:portal-customer e2e:_webdriver",
     "eject": "react-scripts eject",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "deploy": "firebase deploy"
   },
   "repository": {
     "type": "github",

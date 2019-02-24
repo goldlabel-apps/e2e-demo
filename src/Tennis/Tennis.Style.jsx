@@ -5,14 +5,20 @@ export const styles = () => ({
         textAlign: 'center',
         maxWidth: 360,
     },
+    playerTitle:{
+        marginBottom: 16,
+    },
     court:{
         marginTop: '25vh',
     },
+    result:{
+        marginTop: '30vh',
+    },
+    winner:{
+        margin: 32,
+    },
     startMatchBtn:{
         marginTop: '45vh',
-    },
-    matchId:{
-        color: '#ccc',
     },
     points:{
         margin: 16,
@@ -20,20 +26,8 @@ export const styles = () => ({
     games:{
         margin: 16,
     },
-    feedBack: {
-        margin: 16,
-        padding: 16,
-        border: '1px solid #eee',
-    },
     iconBtn:{
         width: 100,
         height: 100,
-    },
-    card:{
-        padding: 16,
-        // background: '#eee',
-    },
-    title:{
-        marginTop: 16,
     },
 });
